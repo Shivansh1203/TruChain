@@ -14,6 +14,7 @@ import datetime
 
 
 
+
 st.set_page_config(page_title="TruChain", page_icon=":tada:", layout="wide")
 # ---- HEADER SECTION ----
 with st.container():
@@ -23,6 +24,27 @@ with st.container():
         " Demand forecasting and analysis"
     )
     st.write("[Learn More >]()")
+
+
+def load_lottieurl(url):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+
+
+# Use local CSS
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+
+local_css("style/style.css")
+
+# ---- LOAD ASSETS ----
+lottie_coding = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
+img_contact_form = Image.open("images/epics_truchain.jpeg")
+img_lottie_animation = Image.open("images/epics_truchain.jpeg")
 
 
 
@@ -141,26 +163,6 @@ else:
     st.write("No prediction available for the selected date.")
 
 
-
-def load_lottieurl(url):
-    r = requests.get(url)
-    if r.status_code != 200:
-        return None
-    return r.json()
-
-
-# Use local CSS
-def local_css(file_name):
-    with open(file_name) as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
-
-local_css("style/style.css")
-
-# ---- LOAD ASSETS ----
-lottie_coding = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
-img_contact_form = Image.open("images/epics_truchain.jpeg")
-img_lottie_animation = Image.open("images/epics_truchain.jpeg")
 
 # ---- PROJECTS ----
 with st.container():
