@@ -203,10 +203,7 @@ with st.container():
 with st.container():
     st.write("---")
     st.header("Our Approach")
-    st.write("##")
-    image_column, text_column = st.columns((1, 2))
-    with image_column:
-        st.image("images/epics_truchain.jpeg")
+    text_column, image_column= st.columns((2))
     with text_column:
         st.subheader("")
         st.write(
@@ -219,11 +216,10 @@ with st.container():
             """
         )
 
-with st.container():
-    image_column, text_column = st.columns((1, 2))
     with image_column:
         st.image("images/epics_truchain.jpeg")
-    with text_column:
+
+with st.container():
         st.subheader("Our Vision")
         st.write(
             """
