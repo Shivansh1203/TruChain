@@ -77,7 +77,7 @@ future.iloc[730:]=future.iloc[:365]
 (future.iloc[730:])['ds']=f1['ds'].copy()
 forecast = model.predict(future)
 with open('model/model.json', 'w') as fout:
-  fout.write(model_to_json(m))  # Save model
+  fout.write(model_to_json(model))  # Save model
 plot_plotly(model,forecast)
 
 
