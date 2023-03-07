@@ -52,7 +52,6 @@ lottie_coding = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_fc
 
 # Set header and subheader
 st.header("Demand Forecasting")
-st.subheader("Predict future demand based on historical data")
 
 # Upload data
 # st.subheader("Upload Data")
