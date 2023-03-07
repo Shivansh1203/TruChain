@@ -135,6 +135,29 @@ Created with ❤️ by [Truchain]().
 
 
 
+
+# ---- WHAT I DO ----
+with st.container():
+    st.write("---")
+    left_column, right_column = st.columns(2)
+    with left_column:
+        st.header("What we do")
+        st.write("##")
+        st.write(
+            """
+            Supply chain forecasting refers to the process of predicting demand, supply, or pricing for a product or a range of products in a particular industry.​
+
+            For example, the algorithms behind a forecasting model can look at data from suppliers and customers and forecast the price of a product.​
+
+            The algorithm can also examine external factors, such as weather or other disruptive events, to further increase the precision of the pricing forecast.​
+
+            TruChain will help users to have clear visibility into the supply chain during peak demand seasons like Diwali and Christmas, to ensure that products were delivered to retailers on time.​
+           
+            """
+        )
+        st.write("[Our Repository >]()")
+    with right_column:
+        st_lottie(lottie_coding, height=300, key="coding")
 # ---- PROJECTS ----
 with st.container():
     st.write("---")
@@ -174,29 +197,6 @@ with st.container():
     forecast = pd.read_csv('model/forecast.csv')
     fig=plot_plotly(m,forecast)
     st.plotly_chart(fig)
-# ---- WHAT I DO ----
-with st.container():
-    st.write("---")
-    left_column, right_column = st.columns(2)
-    with left_column:
-        st.header("What we do")
-        st.write("##")
-        st.write(
-            """
-            Supply chain forecasting refers to the process of predicting demand, supply, or pricing for a product or a range of products in a particular industry.​
-
-            For example, the algorithms behind a forecasting model can look at data from suppliers and customers and forecast the price of a product.​
-
-            The algorithm can also examine external factors, such as weather or other disruptive events, to further increase the precision of the pricing forecast.​
-
-            TruChain will help users to have clear visibility into the supply chain during peak demand seasons like Diwali and Christmas, to ensure that products were delivered to retailers on time.​
-           
-            """
-        )
-        st.write("[Our Repository >]()")
-    with right_column:
-        st_lottie(lottie_coding, height=300, key="coding")
-
 # ---- PROJECTS ----
 with st.container():
     st.write("---")
