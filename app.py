@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-from prophet import Prophet
 from prophet.plot import plot_plotly, plot_components_plotly
 import plotly.express as px
 import plotly.graph_objects as go
