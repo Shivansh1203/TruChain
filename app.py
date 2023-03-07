@@ -59,7 +59,7 @@ lottie_coding = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_fc
 st.sidebar.header('TruChain')
 
 st.sidebar.subheader('What you want to Predict?')
-selected_model = st.sidebar.selectbox('Choose:', ('Forecasting model', 'Anomaly Detection')) 
+selected_model = st.sidebar.selectbox('Choose:', ('Forecasting Model', 'Anomaly Detection')) 
 
 path = "model/forecast.csv"
 print(path)
@@ -76,7 +76,7 @@ df = pd.read_csv(path)
 
 st.sidebar.markdown('''
 ---
-Created with ❤️ by [Truchain]().
+Created with ❤️ by [TruChain]().
 ''')
 
 # if uploaded_file is not None:
