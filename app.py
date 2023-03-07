@@ -18,12 +18,18 @@ import datetime
 st.set_page_config(page_title="TruChain", page_icon=":tada:", layout="wide")
 # ---- HEADER SECTION ----
 with st.container():
-    st.subheader("EPICS Project")
-    st.title("TruChain")
-    st.write(
-        " Demand forecasting and analysis"
-    )
-    st.write("[Learn More >]()")
+    c1, c2 = st.columns(2)
+    with c1:
+        st.subheader("EPICS Project")
+        st.title("TruChain")
+        st.write(
+            " Demand forecasting and analysis"
+        )
+        st.write("[Learn More >]()")
+
+    with c2:
+            st.image('images\scm.jpeg')
+
 
 
 def load_lottieurl(url):
@@ -43,9 +49,6 @@ local_css("style/style.css")
 
 # ---- LOAD ASSETS ----
 lottie_coding = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
-img_contact_form = Image.open("images/epics_truchain.jpeg")
-img_lottie_animation = Image.open("images/epics_truchain.jpeg")
-
 
 
 # Set header and subheader
@@ -203,7 +206,7 @@ with st.container():
     st.write("##")
     image_column, text_column = st.columns((1, 2))
     with image_column:
-        st.image(img_lottie_animation)
+        st.image("images/epics_truchain.jpeg")
     with text_column:
         st.subheader("")
         st.write(
@@ -219,7 +222,7 @@ with st.container():
 with st.container():
     image_column, text_column = st.columns((1, 2))
     with image_column:
-        st.image(img_contact_form)
+        st.image("images/epics_truchain.jpeg")
     with text_column:
         st.subheader("Our Vision")
         st.write(
