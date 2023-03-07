@@ -130,7 +130,7 @@ img_lottie_animation = Image.open("images/epics_truchain.jpeg")
 # ---- PROJECTS ----
 with st.container():
     st.write("---")
-    st.subheader("Our Model")
+    st.header("Our Model")
     with open('model/model.json', 'r') as fin:
      m = model_from_json(fin.read())  # Load model
     forecast = pd.read_csv('model/forecast.csv')
