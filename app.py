@@ -239,3 +239,15 @@ with st.container():
     """,
     unsafe_allow_html=True
 )
+
+
+# Display the PDF file in the Streamlit app
+# st.markdown('''
+# <iframe src=""
+# frameborder="0"
+# marginheight="0"
+# marginwidth="0"
+# width="700px"
+# height="1300px"
+# scrolling="auto"
+# >''', unsafe_allow_html=True)
