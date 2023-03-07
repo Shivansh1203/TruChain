@@ -238,9 +238,9 @@ with st.container():
     def send_email(name, email, message):
         server = smtplib.SMTP("smtp.gmail.com", 587)
         server.starttls()
-        server.login("truchain2023@gmail.com", "balzsvjxdmgtsuts")
+        server.login("epicstruchain@gmail.com", "imttyfmbkriojftd")
         msg = f"Subject: New message from {name}\n\n{name} ({email}) sent the following message:\n\n{message}"
-        server.sendmail("truchain2023@gmail.com", "truchain2023@gmail.com", msg)
+        server.sendmail("epicstruchain@gmail.com", "epicstruchain@gmail.com", msg)
         st.success("Thank you for contacting us.")
         
     name = st.text_input("Name")
