@@ -22,7 +22,7 @@ with st.container():
     with c1:
         st.title("TruChain")
         st.write(
-            " Demand forecasting and analysis"
+            " Stay Ahead of the Game with TruChain."
         )
         st.write("[Learn More >]()")
 
