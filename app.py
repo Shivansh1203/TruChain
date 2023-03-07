@@ -30,8 +30,8 @@ st.header("Demand Forecasting")
 st.subheader("Predict future demand based on historical data")
 
 # Upload data
-st.subheader("Upload Data")
-uploaded_file = st.file_uploader("Choose a file")
+# st.subheader("Upload Data")
+# uploaded_file = st.file_uploader("Choose a file")
 
 st.sidebar.header('TruChain')
 
@@ -54,56 +54,56 @@ st.sidebar.markdown('''
 Created with ❤️ by [Truchain]().
 ''')
 
-if uploaded_file is not None:
-    data = pd.read_csv(uploaded_file)
+# if uploaded_file is not None:
+#     data = pd.read_csv(uploaded_file)
 
-    # Display data
-    st.subheader("Data")
-    st.write(data)
+#     # Display data
+#     st.subheader("Data")
+#     st.write(data)
 
-    # Select date and demand columns
-    date_col = st.selectbox("Select date column", options=data.columns)
-    demand_col = st.selectbox("Select demand column", options=data.columns)
+#     # Select date and demand columns
+#     date_col = st.selectbox("Select date column", options=data.columns)
+#     demand_col = st.selectbox("Select demand column", options=data.columns)
 
-    # Convert date column to datetime format
-    data[date_col] = pd.to_datetime(data[date_col])
+#     # Convert date column to datetime format
+#     data[date_col] = pd.to_datetime(data[date_col])
 
-    # Group data by date column and calculate sum of demand
-    grouped_data = data.groupby(date_col)[demand_col].sum().reset_index()
+#     # Group data by date column and calculate sum of demand
+#     grouped_data = data.groupby(date_col)[demand_col].sum().reset_index()
 
-    # Rename columns to ds and y for Prophet
-    grouped_data = grouped_data.rename(columns={date_col: "ds", demand_col: "y"})
+#     # Rename columns to ds and y for Prophet
+#     grouped_data = grouped_data.rename(columns={date_col: "ds", demand_col: "y"})
 
-    # Set up Prophet model
-    model = Prophet()
+#     # Set up Prophet model
+#     model = Prophet()
 
-    # Fit model on data
-    model.fit(grouped_data)
+#     # Fit model on data
+#     model.fit(grouped_data)
 
-    # Set number of periods to forecast
-    periods = st.number_input("Number of periods to forecast", min_value=1, max_value=365, value=30)
+#     # Set number of periods to forecast
+#     periods = st.number_input("Number of periods to forecast", min_value=1, max_value=365, value=30)
 
-    # Make future dataframe
-    future = model.make_future_dataframe(periods=periods)
+#     # Make future dataframe
+#     future = model.make_future_dataframe(periods=periods)
 
-    # Make forecast
-    forecast = model.predict(future)
+#     # Make forecast
+#     forecast = model.predict(future)
 
-    # Plot forecast
-    st.subheader("Forecast Plot")
-    fig1 = plot_plotly(model, forecast)
-    st.plotly_chart(fig1)
+#     # Plot forecast
+#     st.subheader("Forecast Plot")
+#     fig1 = plot_plotly(model, forecast)
+#     st.plotly_chart(fig1)
 
-    # Plot forecast components
-    st.subheader("Forecast Components Plot")
-    fig2 = plot_components_plotly(model, forecast)
-    st.plotly_chart(fig2)
+#     # Plot forecast components
+#     st.subheader("Forecast Components Plot")
+#     fig2 = plot_components_plotly(model, forecast)
+#     st.plotly_chart(fig2)
 
-    # Download forecast data
-    st.subheader("Download Forecast Data")
-    csv = forecast.to_csv(index=False)
-    href = f'<a href="data:file/csv;base64,{base64.b64encode(csv.encode()).decode()}" download="forecast.csv">Download CSV</a>'
-    st.markdown(href, unsafe_allow_html=True)
+#     # Download forecast data
+#     st.subheader("Download Forecast Data")
+#     csv = forecast.to_csv(index=False)
+#     href = f'<a href="data:file/csv;base64,{base64.b64encode(csv.encode()).decode()}" download="forecast.csv">Download CSV</a>'
+#     st.markdown(href, unsafe_allow_html=True)
 
 
 
