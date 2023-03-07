@@ -134,7 +134,7 @@ with st.container():
      m = model_from_json(fin.read())  # Load model
     forecast = pd.read_csv('model/forecast.csv')
     fig=plot_plotly(m,forecast)
-    st.pyplot(fig)
+    st.plotly_chart(fig)
 # ---- WHAT I DO ----
 with st.container():
     st.write("---")
