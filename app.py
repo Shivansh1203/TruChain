@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-from prophet import Prophet
 from prophet.plot import plot_plotly, plot_components_plotly
 import plotly.express as px
 import plotly.graph_objects as go
@@ -125,8 +124,8 @@ local_css("style/style.css")
 
 # ---- LOAD ASSETS ----
 lottie_coding = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
-img_contact_form = Image.open("images\epics_truchain.jpeg")
-img_lottie_animation = Image.open("images\epics_truchain.jpeg")
+img_contact_form = Image.open("images/epics_truchain.jpeg")
+img_lottie_animation = Image.open("images/epics_truchain.jpeg")
 
 # ---- PROJECTS ----
 with st.container():
