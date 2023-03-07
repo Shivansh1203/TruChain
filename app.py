@@ -28,7 +28,7 @@ with st.container():
         st.write("[Learn More >]()")
 
     with c2:
-            st.image('images\scm.jpeg')
+            st.image('images/scm.jpeg')
 
 
 
