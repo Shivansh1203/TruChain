@@ -9,6 +9,8 @@ from streamlit_lottie import st_lottie
 from PIL import Image
 import base64
 import smtplib
+from prophet.serialize import model_from_json
+from prophet.plot import plot_plotly
 
 
 
@@ -126,7 +128,13 @@ lottie_coding = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_fc
 img_contact_form = Image.open("images\epics_truchain.jpeg")
 img_lottie_animation = Image.open("images\epics_truchain.jpeg")
 
-
+# ---- PROJECTS ----
+with st.container():
+    st.write("---")
+    with open('model/model.json', 'r') as fin:
+     m = model_from_json(fin.read())  # Load model
+    forecast = pd.read_csv('model/forecast.csv')
+    plot_plotly(m,forecast)
 # ---- WHAT I DO ----
 with st.container():
     st.write("---")
