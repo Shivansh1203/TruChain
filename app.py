@@ -62,7 +62,7 @@ st.subheader("Predict future demand based on historical data")
 st.sidebar.header('TruChain')
 
 st.sidebar.subheader('What you want to Predict?')
-selected_model = st.sidebar.selectbox('Choose:', ('Comparative Analysis', 'Anomaly Detection')) 
+selected_model = st.sidebar.selectbox('Choose:', ('Forecasting model', 'Anomaly Detection')) 
 
 path = "model/forecast.csv"
 print(path)
