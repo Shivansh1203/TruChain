@@ -20,7 +20,6 @@ st.set_page_config(page_title="TruChain", page_icon=":tada:", layout="wide")
 with st.container():
     c1, c2 = st.columns(2)
     with c1:
-        st.subheader("EPICS Project")
         st.title("TruChain")
         st.write(
             " Demand forecasting and analysis"
