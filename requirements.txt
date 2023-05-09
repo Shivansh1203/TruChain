@@ -5,7 +5,7 @@ Pillow==8.4.0
 protobuf~=3.19.0
 watchdog==2.1.8
 seaborn
-pandas
+pandas==2.0.0
 numpy
 prophet==1.1.2
 matplotlib
