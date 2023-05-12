@@ -10,6 +10,7 @@ import numpy as np
 import plotly.express as px
 
 
+
 forecast = pd.read_csv('forecast.csv')
 df = pd.read_csv('model/london_merged.csv')
 df['timestamp'] =  pd.to_datetime(df['timestamp'])
@@ -33,3 +34,7 @@ results['error'] = results['y'] - results['yhat']
 results["uncertainty"] = results['yhat_upper'] - results['yhat_lower']
 results['anomaly'] = results.apply(lambda x: 'Yes' if(np.abs(x['error']) >  1.5*x['uncertainty']) else 'No', axis=1)
 results.to_csv('model/anomaly.csv', index=False)
+
+
+
+

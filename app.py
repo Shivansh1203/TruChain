@@ -11,6 +11,8 @@ import smtplib
 from prophet.serialize import model_from_json
 from prophet.plot import plot_plotly
 import datetime
+import altair as alt
+from streamlit_timeline import st_timeline
 
 
 
@@ -43,6 +45,10 @@ def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
+# Description
+def info(title, text):
+    with st.expander(f"{title}"):
+        st.write(text)
 
 local_css("style/style.css")
 
@@ -69,12 +75,6 @@ st.sidebar.markdown('''
 ---
 Created with ❤️ by [TruChain]().
 ''')
-
-
-
-
-
-
 
 
 # ---- WHAT I DO ----
@@ -156,6 +156,36 @@ with st.container():
             )
         )
         st.plotly_chart(fig)
+
+
+        timeine_title = "Major Supply Chain Hikes"
+        st.header(timeine_title)
+        info("Info", "The timeline highlights the major events in the predicted year regarding supply demands.")
+        path = "model/anomaly.csv"
+        df = pd.read_csv(path)
+
+        items = []
+        i = 1
+        for index, row in df.iterrows():
+            anomaly = str(row["anomaly"])
+            if anomaly == "Yes":
+                content = "On {}, it is expected to experience an anomaly in supply demand.".format(
+                    str(row["ds"]))
+                item = {"id": i, "content": "⚠",
+                        "message": content, "start": str(row["ds"])}
+                items.append(item)
+                i += 1
+
+        options = {
+            "min": "2015-01-04",
+            "max": "2017-01-03"
+        }
+
+        timeline = st_timeline(items, groups=[], options=options, height="300px")
+        st.subheader("Selected item")
+        st.write(timeline)
+
+
 
 
 
