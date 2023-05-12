@@ -141,7 +141,7 @@ with st.container():
         forecast = pd.read_csv('model/forecast.csv')
         fig=plot_plotly(m,forecast)
         st.plotly_chart(fig)
-    else:
+    # else:
 
 # ---- PROJECTS ----
 with st.container():
