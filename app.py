@@ -141,7 +141,23 @@ with st.container():
         forecast = pd.read_csv('model/forecast.csv')
         fig=plot_plotly(m,forecast)
         st.plotly_chart(fig)
-    # else:
+    else:
+        results = pd.read_csv('model/anomaly.csv')
+        fig = px.scatter(results.reset_index(), x='ds', y='y', color='anomaly', title='Anomaly’s')
+        fig.update_xaxes(
+            rangeslider_visible=True,
+            rangeselector=dict(
+                buttons=list([
+                    dict(count=1, label="1y", step="year", stepmode="backward"),
+                    dict(count=2, label="3y", step="year", stepmode="backward"),
+                    dict(count=3, label="5y", step="year", stepmode="backward"),
+                    dict(step="all")
+                ])
+            )
+        )
+        st.plotly_chart(fig)
+
+
 
 # ---- PROJECTS ----
 with st.container():
