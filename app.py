@@ -25,7 +25,6 @@ with st.container():
             "Stay Ahead of the Game with TruChain."
         )
         st.write("[Learn More >]()")
-
     with c2:
             st.image('images/scm.jpeg')
 
