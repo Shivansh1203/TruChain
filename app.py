@@ -25,7 +25,7 @@ with st.container():
         st.write(
             "Stay Ahead of the Game with TruChain."
         )
-        st.write("[Learn More >]()")
+        st.write("[Learn More >](https://shivansh1203-truchain-app-p71gk7.streamlit.app/)")
     with c2:
             st.image('images/scm.jpeg')
 
