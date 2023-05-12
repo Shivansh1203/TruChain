@@ -154,8 +154,23 @@ with st.container():
             )
         )
         st.plotly_chart(fig)
+        left_column, middle_column1, center_column, right_column, middle_column2 = st.columns(5)
+        with left_column:
+            " "
 
-        st.image('images/truchain_polarplot.png')
+        with middle_column1:
+            " "
+        
+        with center_column:
+            st.image('images/truchain_polarplot.png')
+
+        with right_column:
+            " "
+
+        with middle_column2:
+            " "
+        
+        
 
 
 
