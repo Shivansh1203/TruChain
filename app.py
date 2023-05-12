@@ -103,41 +103,46 @@ with st.container():
 with st.container():
     st.write("---")
     st.header("Our Model")
-    # Load the forecast data
-    df = pd.read_csv("model/forecast.csv")
 
-    # Define start and end dates
-    start_date = datetime.date(2015, 1, 1)
-    end_date = datetime.date(2023, 12, 31)
+    if selected_model=='Forecasting Model':
 
-    # Create date input
-    selected_date = st.date_input(
-        "Choose a date",
-        value=datetime.date(2015, 1, 1),
-        min_value=start_date,
-        max_value=end_date,
-        key="date_input"
-    )
+        # Load the forecast data
+        df = pd.read_csv("model/forecast.csv")
 
-    # Filter the forecast data for the selected date
-    d = selected_date.strftime("%Y-%m-%d")
-    forecast = df.loc[df['ds'] == d]
+        # Define start and end dates
+        start_date = datetime.date(2015, 1, 1)
+        end_date = datetime.date(2023, 12, 31)
 
-    # Display the prediction information
-    if not forecast.empty:
-        yhat = "{:.2f}".format(float(forecast['yhat']))
-        yhat_upper = "{:.2f}".format(float(forecast['yhat_upper']))
-        yhat_lower = "{:.2f}".format(float(forecast['yhat_lower']))
-        prediction_year_info = "On {} the predicted supply demand is between {} and {}, with a most likely demand of {}.".format(
-            d, yhat_upper, yhat_lower, yhat)
-        st.write(prediction_year_info)
+        # Create date input
+        selected_date = st.date_input(
+            "Choose a date",
+            value=datetime.date(2015, 1, 1),
+            min_value=start_date,
+            max_value=end_date,
+            key="date_input"
+        )
+
+        # Filter the forecast data for the selected date
+        d = selected_date.strftime("%Y-%m-%d")
+        forecast = df.loc[df['ds'] == d]
+
+        # Display the prediction information
+        if not forecast.empty:
+            yhat = "{:.2f}".format(float(forecast['yhat']))
+            yhat_upper = "{:.2f}".format(float(forecast['yhat_upper']))
+            yhat_lower = "{:.2f}".format(float(forecast['yhat_lower']))
+            prediction_year_info = "On {} the predicted supply demand is between {} and {}, with a most likely demand of {}.".format(
+                d, yhat_upper, yhat_lower, yhat)
+            st.write(prediction_year_info)
+        else:
+            st.write("No prediction available for the selected date.")
+        with open('model/model.json', 'r') as fin:
+            m = model_from_json(fin.read())  # Load model
+        forecast = pd.read_csv('model/forecast.csv')
+        fig=plot_plotly(m,forecast)
+        st.plotly_chart(fig)
     else:
-        st.write("No prediction available for the selected date.")
-    with open('model/model.json', 'r') as fin:
-     m = model_from_json(fin.read())  # Load model
-    forecast = pd.read_csv('model/forecast.csv')
-    fig=plot_plotly(m,forecast)
-    st.plotly_chart(fig)
+
 # ---- PROJECTS ----
 with st.container():
     st.write("---")
