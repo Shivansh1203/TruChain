@@ -154,11 +154,8 @@ with st.container():
             )
         )
         st.plotly_chart(fig)
-        left_column, middle_column1, center_column, right_column, middle_column2 = st.columns(5)
+        left_column,  center_column, right_column = st.columns(5)
         with left_column:
-            " "
-
-        with middle_column1:
             " "
         
         with center_column:
@@ -166,11 +163,6 @@ with st.container():
 
         with right_column:
             " "
-
-        with middle_column2:
-            " "
-        
-        
 
 
 
