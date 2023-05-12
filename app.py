@@ -155,7 +155,7 @@ with st.container():
                 ])
             )
         )
-        st.plotly_chart(fig)
+        st.plotly_chart(fig.show())
 
 
 
