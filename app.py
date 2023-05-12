@@ -11,7 +11,6 @@ import smtplib
 from prophet.serialize import model_from_json
 from prophet.plot import plot_plotly
 import datetime
-import altair as alt
 from streamlit_timeline import st_timeline
 
 
