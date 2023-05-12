@@ -72,7 +72,7 @@ df = pd.read_csv(path)
 
 st.sidebar.markdown('''
 ---
-Created with ❤️ by [TruChain]().
+Created with ❤️ by [TruChain](https://shivansh1203-truchain-app-p71gk7.streamlit.app/).
 ''')
 
 
