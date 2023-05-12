@@ -25,7 +25,7 @@ with st.container():
         st.write(
             "Stay Ahead of the Game with TruChain."
         )
-        st.write("[Learn More >](https://shivansh1203-truchain-app-p71gk7.streamlit.app/)")
+        st.write("[Learn More >](https://www.craft.do/s/ObT9EzINTmlNed)")
     with c2:
             st.image('images/scm.jpeg')
 
@@ -72,7 +72,7 @@ df = pd.read_csv(path)
 
 st.sidebar.markdown('''
 ---
-Created with ❤️ by [TruChain](https://shivansh1203-truchain-app-p71gk7.streamlit.app/).
+Created with ❤️ by [TruChain](https://github.com/Shivansh1203/TruChain).
 ''')
 
 
