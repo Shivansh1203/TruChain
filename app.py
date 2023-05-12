@@ -139,6 +139,15 @@ with st.container():
         forecast = pd.read_csv('model/forecast.csv')
         fig=plot_plotly(m,forecast)
         st.plotly_chart(fig)
+        left_column,  center_column, right_column = st.columns(3)
+        with left_column:
+            " "
+        
+        with center_column:
+            st.image('images/truchain_polarplot.png')
+
+        with right_column:
+            " "
     else:
         results = pd.read_csv('model/anomaly.csv')
         fig = px.scatter(results.reset_index(), x='ds', y='y', color='anomaly', title='Anomaly’s')
@@ -154,17 +163,6 @@ with st.container():
             )
         )
         st.plotly_chart(fig)
-        left_column,  center_column, right_column = st.columns(3)
-        with left_column:
-            " "
-        
-        with center_column:
-            st.image('images/truchain_polarplot.png')
-
-        with right_column:
-            " "
-
-
 
         timeine_title = "Major Supply Chain Hikes"
         st.header(timeine_title)
