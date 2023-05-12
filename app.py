@@ -155,6 +155,9 @@ with st.container():
         )
         st.plotly_chart(fig)
 
+        st.image('images/truchain_polarplot.png')
+
+
 
         timeine_title = "Major Supply Chain Hikes"
         st.header(timeine_title)
