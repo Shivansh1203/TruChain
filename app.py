@@ -51,7 +51,8 @@ def info(title, text):
 local_css("style/style.css")
 
 # ---- LOAD ASSETS ----
-lottie_coding = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
+lottie_coding_1 = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
+lottie_coding_2 = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_2cwDXD.json")
 
 
 
@@ -96,13 +97,19 @@ with st.container():
         )
         st.write("[Our Repository >]()")
     with right_column:
-        st_lottie(lottie_coding, height=300, key="coding")
+        if selected_model == 'Forecasting Model':
+            st_lottie(lottie_coding_1, height=300, key="coding")
+        else:
+            st_lottie(lottie_coding_2, height=300, key="coding")
+
 # ---- PROJECTS ----
 with st.container():
     st.write("---")
     st.header("Our Model")
 
     if selected_model=='Forecasting Model':
+
+        # st_lottie(lottie_coding_1, height=300, key="coding")
 
         # Load the forecast data
         df = pd.read_csv("model/forecast.csv")
@@ -152,6 +159,7 @@ with st.container():
         with right_column:
             " "
     else:
+        # st_lottie(lottie_coding_2, height=300, key="coding")
         results = pd.read_csv('model/anomaly.csv')
         fig = px.scatter(results.reset_index(), x='ds', y='y', color='anomaly', title='Anomaly’s')
         fig.update_xaxes(
