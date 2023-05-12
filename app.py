@@ -22,7 +22,7 @@ with st.container():
     with c1:
         st.title("TruChain")
         st.write(
-            " hello Stay Ahead of the Game with TruChain."
+            "Stay Ahead of the Game with TruChain."
         )
         st.write("[Learn More >]()")
 
@@ -38,7 +38,7 @@ def load_lottieurl(url):
     return r.json()
 
 
-# Use local CSS
+
 def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
@@ -50,11 +50,7 @@ local_css("style/style.css")
 lottie_coding = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
 
 
-# Set header and subheader
 
-# Upload data
-# st.subheader("Upload Data")
-# uploaded_file = st.file_uploader("Choose a file")
 
 st.sidebar.header('TruChain')
 
@@ -67,68 +63,13 @@ df = pd.read_csv(path)
 
 
 
-# st.sidebar.subheader('Choose a city:')
-# donut_theta = st.sidebar.selectbox('Select data', ())
 
-# st.sidebar.subheader('Line chart parameters')
-# plot_data = st.sidebar.multiselect('Select data', [])
-# plot_height = st.sidebar.slider('Specify plot height', 200, 500, 250)
 
 st.sidebar.markdown('''
 ---
 Created with ❤️ by [TruChain]().
 ''')
 
-# if uploaded_file is not None:
-#     data = pd.read_csv(uploaded_file)
-
-#     # Display data
-#     st.subheader("Data")
-#     st.write(data)
-
-#     # Select date and demand columns
-#     date_col = st.selectbox("Select date column", options=data.columns)
-#     demand_col = st.selectbox("Select demand column", options=data.columns)
-
-#     # Convert date column to datetime format
-#     data[date_col] = pd.to_datetime(data[date_col])
-
-#     # Group data by date column and calculate sum of demand
-#     grouped_data = data.groupby(date_col)[demand_col].sum().reset_index()
-
-#     # Rename columns to ds and y for Prophet
-#     grouped_data = grouped_data.rename(columns={date_col: "ds", demand_col: "y"})
-
-#     # Set up Prophet model
-#     model = Prophet()
-
-#     # Fit model on data
-#     model.fit(grouped_data)
-
-#     # Set number of periods to forecast
-#     periods = st.number_input("Number of periods to forecast", min_value=1, max_value=365, value=30)
-
-#     # Make future dataframe
-#     future = model.make_future_dataframe(periods=periods)
-
-#     # Make forecast
-#     forecast = model.predict(future)
-
-#     # Plot forecast
-#     st.subheader("Forecast Plot")
-#     fig1 = plot_plotly(model, forecast)
-#     st.plotly_chart(fig1)
-
-#     # Plot forecast components
-#     st.subheader("Forecast Components Plot")
-#     fig2 = plot_components_plotly(model, forecast)
-#     st.plotly_chart(fig2)
-
-#     # Download forecast data
-#     st.subheader("Download Forecast Data")
-#     csv = forecast.to_csv(index=False)
-#     href = f'<a href="data:file/csv;base64,{base64.b64encode(csv.encode()).decode()}" download="forecast.csv">Download CSV</a>'
-#     st.markdown(href, unsafe_allow_html=True)
 
 
 
@@ -284,13 +225,3 @@ with st.container():
 )
 
 
-# Display the PDF file in the Streamlit app
-# st.markdown('''
-# <iframe src=""
-# frameborder="0"
-# marginheight="0"
-# marginwidth="0"
-# width="700px"
-# height="1300px"
-# scrolling="auto"
-# >''', unsafe_allow_html=True)
