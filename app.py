@@ -154,7 +154,7 @@ with st.container():
             )
         )
         st.plotly_chart(fig)
-        left_column,  center_column, right_column = st.columns(5)
+        left_column,  center_column, right_column = st.columns(3)
         with left_column:
             " "
         
