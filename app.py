@@ -105,7 +105,12 @@ with st.container():
 # ---- PROJECTS ----
 with st.container():
     st.write("---")
-    st.header("Our Model")
+
+    if(selected_model=='Forecasting Model'):
+
+        st.header("Our Model")
+    else:
+        st.header("Anomaly Detection")
 
     if selected_model=='Forecasting Model':
 
