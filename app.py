@@ -139,6 +139,9 @@ with st.container():
         forecast = pd.read_csv('model/forecast.csv')
         fig=plot_plotly(m,forecast)
         st.plotly_chart(fig)
+        polar_title = "Polar Plot"
+        st.header(polar_title)
+        info("Info", "This shows the trend of supply demand for the given period.")
         left_column,  center_column, right_column = st.columns(3)
         with left_column:
             " "
