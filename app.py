@@ -1,12 +1,9 @@
 import streamlit as st
 import pandas as pd
-from prophet.plot import plot_plotly, plot_components_plotly
+from prophet.plot import plot_plotly
 import plotly.express as px
-import plotly.graph_objects as go
 import requests
 from streamlit_lottie import st_lottie
-from PIL import Image
-import base64
 import smtplib
 from prophet.serialize import model_from_json
 from prophet.plot import plot_plotly
