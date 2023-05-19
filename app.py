@@ -6,7 +6,6 @@ import requests
 from streamlit_lottie import st_lottie
 import smtplib
 from prophet.serialize import model_from_json
-from prophet.plot import plot_plotly
 import datetime
 from streamlit_timeline import st_timeline
 
