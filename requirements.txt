@@ -8,6 +8,7 @@ seaborn
 pandas==1.5.3
 numpy==1.22.3
 prophet==1.1.2
+holidays==0.21
 matplotlib==3.7.0
 scikit-learn
 plotly==5.13.0
